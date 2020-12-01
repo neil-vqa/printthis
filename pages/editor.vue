@@ -88,7 +88,7 @@
 						ref="html2Pdf">
 						   <section slot="pdf-content">
 						  	<div class="p-10">
-						  		<h1 class="text-base mb-10">Enclosure No. 2 to DMNo. 043, s. 2020</h1>
+						  		<h1 class="text-base mb-10">Enclosure No. 2 to DM No. 043, s. 2020</h1>
 						  		<h1 class="text-base font-bold uppercase text-center mb-5">INDIVIDUAL WORKWEEK ACCOMPLISHMENT REPORT</h1>
 						  		<div class="grid grid-cols-2 mb-10">
 						  			<div>
@@ -100,16 +100,16 @@
 						  				<p class="text-base whitespace-pre">School:	{{ school }}</p>
 						  			</div>
 						  		</div>
-						  		<table class="table-fixed mb-5">
+						  		<table class="table-fixed mb-10">
 										<thead>
-											 <tr>
+											 <tr class="col-heading bg-gray-200">
 												<th class="px-3 py-2 w-1/4 border border-black">Actual Days of Attendance to Work</th>
 												<th class="px-3 py-2 w-1/4 border border-black">Actual Time Log</th>
 												<th class="px-3 py-2 w-1/2 border border-black">Actual Accomplishments/Output</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr v-for="activity in activities">
+											<tr v-for="activity in activities" class="activity">
 												<td class="px-3 py-2 text-center border border-black" v-if="activity.date">{{ activity.date }}</td>
 												<td class="px-3 py-2 text-center border border-black" v-if="activity.time.in">
 													Time-in: {{ activity.time.in }} <br />
@@ -119,26 +119,25 @@
 											</tr>
 										</tbody>
 									</table>
-									<div class="text-center text-sm">
+									<div class="text-center submission">
 										<p class="mb-4 text-base">Submitted by:</p>
-										<p class="uppercase underline font-bold text-base">{{ name }}</p>
+										<p class="uppercase font-bold text-base">{{ name }}</p>
 										<p><i>{{ position }}</i></p>
 										<p><i>Date: {{ submitted }}</i></p>
 										<br /><br />
 										<p class="mb-4 text-base">Verified by:</p>
-										<p class="uppercase underline font-bold text-base">{{ verifierName }}</p>
+										<p class="uppercase font-bold text-base">{{ verifierName }}</p>
 										<p><i>{{ verifierPosition }}</i></p>
 										<p><i>Date: {{ submitted }}</i></p>
 									</div>
 						  		<div class="flex justify-center space-x-5 mt-10">
-						  			<div v-for="image in images"><img :src="image.pic" class="h-32"></div>
+						  			<div v-for="image in images"><img v-if="image.pic" :src="image.pic" class="h-48"></div>
 						  		</div>
 						  	</div>
 						  </section>
 					</vue-html2pdf>
 				</client-only>
     	</div>
-    	
     </div>
   </div>
 </template>
@@ -179,6 +178,18 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+.col-heading {
+	font-size: 12px;
+}
+
+.activity {
+	font-size: 12px;
+}
+
+.submission {
+	font-size: 11px;
+}
+
 .input-box {
 	@apply block w-full border border-gray-400 py-1 px-4 text-gray-700 text-base;
 }
