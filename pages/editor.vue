@@ -97,7 +97,7 @@
 						  			</div>
 						  			<div>
 						  				<p class="text-base whitespace-pre">Division:	{{ division }}</p>
-						  				<p class="text-base whitespace-pre">School:		{{ school }}</p>
+						  				<p class="text-base whitespace-pre">School:	{{ school }}</p>
 						  			</div>
 						  		</div>
 						  		<table class="table-fixed mb-5">
