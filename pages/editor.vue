@@ -100,7 +100,7 @@
 						  				<p class="text-base whitespace-pre">School:		{{ school }}</p>
 						  			</div>
 						  		</div>
-						  		<table class="table-fixed mb-16">
+						  		<table class="table-fixed mb-5">
 										<thead>
 											 <tr>
 												<th class="px-3 py-2 w-1/4 border border-black">Actual Days of Attendance to Work</th>
